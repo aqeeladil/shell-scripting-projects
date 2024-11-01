@@ -13,10 +13,10 @@ sudo apt update
 
 2. Clone the repository
 ```bash
-git clone https://github.com/aqeeladil/aws-resource-tracker.git
+git clone https://github.com/aqeeladil/shell-scripting-projects.git
 ```
 ```bash
-cd aws-resource-tracker
+cd shell-scripting-projects/aws-resource-tracker
 ```
 ```bash
 chmod +x resource_tracker.sh
