@@ -14,10 +14,10 @@ sudo apt install jq -y
 
 2. Clone the repository and grant necessary permissions.
 ```bash
-git clone https://github.com/aqeeladil/github-api-integration.git
+git clone https://github.com/aqeeladil/shell-scripting-projects.git
 ```
 ```bash
-cd github-api-integration
+cd shell-scripting-projects/github-api-integration
 ```
 ```bash
 chmod +x list_users.sh
