@@ -8,7 +8,7 @@
 
 # Configuration
 JENKINS_HOME="/var/lib/jenkins"
-S3_BUCKET="jenkins-logs-backup"
+S3_BUCKET=s3://jenkins-logs-backup
 TODAY=$(date +%Y-%m-%d)
 
 # Verify AWS CLI installation
