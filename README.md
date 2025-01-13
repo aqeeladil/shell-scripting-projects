@@ -1,1 +1,1 @@
-# shell-scripting-projects
+# Shell Scripting Projects
