@@ -1,53 +1,77 @@
-# Aws Resource Tracker
+# AWS Resource Tracker
 
-A script that reports the usage of resources on your Aws account. You can also integrate this script with Cronjob, and then Cronjob will execute the script at your specified date and time.
+A script that reports the usage of resources on your AWS account. You can integrate this script with a Cron job to execute it at a specified date and time automatically.
 
-## To set up the project locally, follow the below steps:
+## Setup Instructions
 
-1. **Set up the environment (Ubuntu)**
+Follow the steps below to set up the project locally:
 
-    `sudo apt update`
+### 1. Update Your System
 
-2. **Clone the repository**
+Before installing dependencies, update your package list:
 
-    ```bash
-    git clone https://github.com/aqeeladil/shell-scripting-projects.git
-    
-    cd shell-scripting-projects/aws-resource-tracker
+```bash
+sudo apt update
+```
 
-    chmod +x resource_tracker.sh
-    ```
+### 2. Clone the Repository
 
-3. **Aws CLI Installation**
+Clone the repository and navigate to the project directory:
 
-    ```
-    # Install AWS CLI
-    curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-    unzip awscliv2.zip
-    sudo ./aws/install
-    aws --version
+```bash
+git clone https://github.com/aqeeladil/shell-scripting-projects.git
+cd shell-scripting-projects/aws-resource-tracker
+chmod +x resource_tracker.sh
+```
 
-    # Configure awscli (Obtain ```Access-Key-ID``` and ```Secret-Access-Key``` from the AWS Management  Console).
-    aws configure
-    ```
+### 3. Install AWS CLI
 
-5. **Set a Cron job to run this script every 5 minutes and append it to the outputFile.txt**
+Ensure AWS CLI is installed on your system:
+
+```bash
+# Download and install AWS CLI
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
+
+# Verify installation
+aws --version
+```
+
+### 4. Configure AWS CLI
+
+Obtain your `Access Key ID` and `Secret Access Key` from the AWS Management Console and configure AWS CLI:
+
+```bash
+aws configure
+```
+
+### 5. Schedule the Script with a Cron Job
+
+To run the script automatically every 5 minutes and append output to `outputFile.txt`, follow these steps:
+
+1. Open the Cron job editor:
 
     ```bash
     crontab -e
-
-    */5 * * * * /path/to/resource_tracker.sh >> /path/to/outputFile.txt
-
-    crontab -l
-
-    cat /path/to/outputfile.txt
     ```
 
+2. Add the following line at the end of the file:
 
+    ```bash
+    */5 * * * * /path/to/resource_tracker.sh >> /path/to/outputFile.txt
+    ```
 
+3. Save and exit the editor.
+4. To verify the scheduled Cron job:
 
+    ```bash
+    crontab -l
+    ```
 
+5. To check the output:
 
-
-
+    ```bash
+    cat /path/to/outputFile.txt
+    ```
 
